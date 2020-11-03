@@ -1,0 +1,29 @@
+[2020-10-31 20:46:44
+ INFO]: startup started
+[2020-10-31 20:46:44
+ INFO]: startup build image from ./centos
+Sending build context to Docker daemon  3.584kB
+Step 1/4 : FROM centos:latest
+ ---> 0d120b6ccaa8
+Step 2/4 : COPY bin/main.sh /usr/local/
+ ---> 8728a978828f
+Step 3/4 : RUN yum -q -y install ruby
+ ---> Running in e8c97c0b338b
+[91mwarning: /var/cache/dnf/AppStream-02e86d1c976ab532/packages/ruby-2.5.5-105.module_el8.1.0+214+9be47fd7.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID 8483c65d: NOKEY
+[0m[91mImporting GPG key 0x8483C65D:
+ Userid     : "CentOS (CentOS Official Signing Key) <security@centos.org>"
+ Fingerprint: 99DB 70FA E1D7 CE22 7FB6 4882 05B5 55B3 8483 C65D
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
+[0mRemoving intermediate container e8c97c0b338b
+ ---> 1c6e1cf4a7e7
+Step 4/4 : CMD ["ruby", "/usr/local/main.sh"]
+ ---> Running in 9472748faa2d
+Removing intermediate container 9472748faa2d
+ ---> 4abb476ecc9b
+Successfully built 4abb476ecc9b
+Successfully tagged python-cli-whereami:latest
+[2020-10-31 20:46:44
+ INFO]: startup running image
+[OUTPUT] Hello World
+[2020-10-31 20:46:44
+ INFO]: startup ended
